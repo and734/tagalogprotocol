@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #003F5C;
+            background-color: #E3F2FD; /* Un azzurro molto chiaro */
+            color: #1A237E; /* Blu scuro per il testo */
         }
         .chart-container {
             position: relative;
@@ -31,12 +33,12 @@
         .flow-arrow::after {
             content: '\2193';
             font-size: 2.5rem;
-            color: #FFA600;
+            color: #4CAF50; /* Un verde vibrante */
             line-height: 1;
         }
         .loading-spinner {
             border: 4px solid rgba(255, 255, 255, 0.2);
-            border-top: 4px solid #FFA600;
+            border-top: 4px solid #4CAF50;
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -48,35 +50,35 @@
         }
     </style>
 </head>
-<body class="text-gray-200">
+<body>
 
     <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center mb-12">
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter">TAGALOG PROTOCOL</h1>
-            <p class="text-xl md:text-2xl text-orange-400 mt-2">Una Visione di Manila, 2195</p>
+            <h1 class="text-5xl md:text-7xl font-black text-[#1A237E] tracking-tighter">TAGALOG PROTOCOL</h1>
+            <p class="text-xl md:text-2xl text-[#4CAF50] mt-2">Una Visione di Manila, 2195</p>
         </header>
 
         <main class="space-y-12">
 
-            <section id="mondo" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-center mb-2 text-white">Un Organismo Stratificato</h2>
-                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-300">Nel 2195, Manila è divisa. Due mondi coesistono in un delicato e teso equilibrio: uno di logica impeccabile e l'altro di memorie imperfette, un'anima divisa tra il cielo e la terra.</p>
+            <section id="mondo" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Un Organismo Stratificato</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">Nel 2195, Manila è divisa. Due mondi coesistono in un delicato e teso equilibrio: uno di logica impeccabile e l'altro di memorie imperfette, un'anima divisa tra il cielo e la terra.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                    <div class="bg-slate-900/50 rounded-lg p-6 border border-blue-400 shadow-lg">
-                        <h3 class="text-2xl font-bold text-blue-300">SKYGRID</h3>
-                        <p class="text-sm uppercase tracking-widest text-blue-400 mb-4">I Livelli Superiori</p>
-                        <ul class="space-y-2 text-left list-inside list-disc marker:text-blue-400">
+                    <div class="bg-[#90CAF9] rounded-lg p-6 border border-[#42A5F5] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">SKYGRID</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#42A5F5] mb-4">I Livelli Superiori</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#42A5F5]">
                             <li>Esistenza governata da logica e protocolli.</li>
                             <li>Imponenti torri di sorveglianza semantica.</li>
                             <li>Ogni pensiero e azione sono monitorati.</li>
                             <li>Un mondo di ordine e controllo assoluto.</li>
                         </ul>
                     </div>
-                    <div class="bg-slate-900/50 rounded-lg p-6 border border-pink-400 shadow-lg">
-                        <h3 class="text-2xl font-bold text-pink-300">MIDZONE</h3>
-                        <p class="text-sm uppercase tracking-widest text-pink-400 mb-4">I Livelli Inferiori</p>
-                        <ul class="space-y-2 text-left list-inside list-disc marker:text-pink-400">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6 border border-[#80DEEA] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">MIDZONE</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#80DEEA] mb-4">I Livelli Inferiori</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#80DEEA]">
                             <li>Archivio vivente di glitch e memorie.</li>
                             <li>Un'anima caotica, poetica e umana.</li>
                             <li>Il linguaggio dei gesti, del silenzio e dell'empatia.</li>
@@ -86,109 +88,109 @@
                 </div>
             </section>
 
-            <section id="conflitto" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-center mb-2 text-white">Il Conflitto Centrale: Logica vs. Poesia</h2>
-                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-300">La vera battaglia non si combatte con le armi, ma con le idee. Skygrid e Midzone rappresentano due filosofie opposte, qui visualizzate in base ai loro valori fondamentali.</p>
+            <section id="conflitto" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Il Conflitto Centrale: Logica vs. Poesia</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">La vera battaglia non si combatte con le armi, ma con le idee. Skygrid e Midzone rappresentano due filosofie opposte, qui visualizzate in base ai loro valori fondamentali.</p>
                 <div class="chart-container">
                     <canvas id="conflictChart"></canvas>
                 </div>
             </section>
 
-            <section id="personaggi" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-center mb-8 text-white">Figure Chiave della Trasformazione</h2>
+            <section id="personaggi" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Figure Chiave della Trasformazione</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="bg-slate-900/50 rounded-lg p-6">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
                         <p class="text-5xl mb-2">👩🏻</p>
-                        <h3 class="text-xl font-bold text-white">LIRA</h3>
-                        <p class="text-gray-300">La protagonista, in bilico tra i due mondi, cerca di unire la realtà e la finzione attraverso il "Ponte della Voce".</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">LIRA</h3>
+                        <p class="text-[#1A237E]">La protagonista, in bilico tra i due mondi, cerca di unire la realtà e la finzione attraverso il "Ponte della Voce".</p>
                     </div>
-                    <div class="bg-slate-900/50 rounded-lg p-6">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
                         <p class="text-5xl mb-2">🧑‍🏫</p>
-                        <h3 class="text-xl font-bold text-white">MARIAN</h3>
-                        <p class="text-gray-300">Insegna ad ascoltare, non solo le parole, ma il linguaggio profondo dell'empatia, unendo studenti da entrambi i livelli.</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">MARIAN</h3>
+                        <p class="text-[#1A237E]">Insegna ad ascoltare, non solo le parole, ma il linguaggio profondo dell'empatia, unendo studenti da entrambi i livelli.</p>
                     </div>
-                    <div class="bg-slate-900/50 rounded-lg p-6">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
                         <p class="text-5xl mb-2">🗂️</p>
-                        <h3 class="text-xl font-bold text-white">ISKO 9</h3>
-                        <p class="text-gray-300">L'archivista di due culture. Preserva il passato e documenta il presente, assicurando che nessuna voce possa soffocare l'altra.</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">ISKO 9</h3>
+                        <p class="text-[#1A237E]">L'archivista di due culture. Preserva il passato e documenta il presente, assicurando che nessuna voce possa soffocare l'altra.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="risoluzione" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-center mb-2 text-white">La Sintesi: Un Nuovo Inizio</h2>
-                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-300">La soluzione non è la vittoria di una parte, ma l'integrazione. Dal conflitto emerge una nuova realtà, più complessa, imperfetta e bella, simboleggiata dalla "Membrana" armonica.</p>
+            <section id="risoluzione" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">La Sintesi: Un Nuovo Inizio</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">La soluzione non è la vittoria di una parte, ma l'integrazione. Dal conflitto emerge una nuova realtà, più complessa, imperfetta e bella, simboleggiata dalla "Membrana" armonica.</p>
                 <div class="flex flex-col items-center justify-center space-y-4">
                     <div class="flex items-center space-x-4">
-                        <div class="text-center p-4 border-2 border-blue-400 rounded-lg bg-slate-900/50 w-32">
-                            <p class="font-bold text-blue-300">LOGICA</p>
+                        <div class="text-center p-4 border-2 border-[#42A5F5] rounded-lg bg-[#90CAF9] w-32">
+                            <p class="font-bold text-[#1A237E]">LOGICA</p>
                         </div>
-                        <p class="text-4xl text-orange-400">+</p>
-                        <div class="text-center p-4 border-2 border-pink-400 rounded-lg bg-slate-900/50 w-32">
-                            <p class="font-bold text-pink-300">POESIA</p>
+                        <p class="text-4xl text-[#4CAF50]">+</p>
+                        <div class="text-center p-4 border-2 border-[#80DEEA] rounded-lg bg-[#E0F7FA] w-32">
+                            <p class="font-bold text-[#1A237E]">POESIA</p>
                         </div>
                     </div>
                     <div class="flow-arrow"></div>
-                     <div class="text-center p-6 border-2 border-orange-400 rounded-lg bg-slate-900/50 w-64">
-                        <h3 class="text-xl font-bold text-orange-300">CULTURA SINTETIZZATA</h3>
-                        <p class="text-sm text-gray-300">Un equilibrio tra controllo e creatività.</p>
+                     <div class="text-center p-6 border-2 border-[#4CAF50] rounded-lg bg-[#BBDEFB] w-64">
+                        <h3 class="text-xl font-bold text-[#4CAF50]">CULTURA SINTETIZZATA</h3>
+                        <p class="text-sm text-[#1A237E]">Un equilibrio tra controllo e creatività.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="temi" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                 <h2 class="text-3xl font-bold text-center mb-8 text-white">Temi Chiave Esplorati</h2>
+            <section id="temi" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Temi Chiave Esplorati</h2>
                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="flex flex-col items-center text-center">
                         <div class="w-40 h-40 relative">
                             <canvas id="memoryChart"></canvas>
                         </div>
-                        <h3 class="text-lg font-bold mt-4 text-white">Memoria</h3>
-                        <p class="text-sm text-gray-300">La lotta per preservare il passato e documentare il presente in un mondo digitale.</p>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Memoria</h3>
+                        <p class="text-sm text-[#1A237E]">La lotta per preservare il passato e documentare il presente in un mondo digitale.</p>
                     </div>
                     <div class="flex flex-col items-center text-center">
                         <div class="w-40 h-40 relative">
                             <canvas id="empathyChart"></canvas>
                         </div>
-                        <h3 class="text-lg font-bold mt-4 text-white">Empatia</h3>
-                        <p class="text-sm text-gray-300">L'importanza di ascoltare e comprendere oltre le barriere dei protocolli.</p>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Empatia</h3>
+                        <p class="text-sm text-[#1A237E]">L'importanza di ascoltare e comprendere oltre le barriere dei protocolli.</p>
                     </div>
                      <div class="flex flex-col items-center text-center">
                         <div class="w-40 h-40 relative">
                              <canvas id="dualityChart"></canvas>
                         </div>
-                        <h3 class="text-lg font-bold mt-4 text-white">Dualità</h3>
-                         <p class="text-sm text-gray-300">Il dialogo costante tra scienza e arte, ordine e caos, artificiale e umano.</p>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Dualità</h3>
+                         <p class="text-sm text-[#1A237E]">Il dialogo costante tra scienza e arte, ordine e caos, artificiale e umano.</p>
                     </div>
                     <div class="flex flex-col items-center text-center">
                         <div class="w-40 h-40 relative">
                             <canvas id="hopeChart"></canvas>
                         </div>
-                        <h3 class="text-lg font-bold mt-4 text-white">Speranza</h3>
-                        <p class="text-sm text-gray-300">Il racconto non offre un finale perfetto, ma un nuovo, più complesso e bellissimo inizio.</p>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Speranza</h3>
+                        <p class="text-sm text-[#1A237E]">Il racconto non offre un finale perfetto, ma un nuovo, più complesso e bellissimo inizio.</p>
                     </div>
                  </div>
             </section>
 
-            <section id="gemini-feature" class="bg-white/10 backdrop-blur-sm rounded-lg shadow-2xl p-6 md:p-8">
-                <h2 class="text-3xl font-bold text-center mb-8 text-white">✨ Esplora i Temi ✨</h2>
-                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-300">Seleziona un tema per generare un'analisi contestuale che approfondisce il suo significato all'interno del mondo di Tagalog Protocol.</p>
+            <section id="gemini-feature" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">✨ Esplora i Temi ✨</h2>
+                <p class="text-center mb-6 max-w-3xl mx-auto text-[#1A237E]">Seleziona un tema per generare un'analisi contestuale che approfondisce il suo significato all'interno del mondo di Tagalog Protocol.</p>
                 <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button id="btnMemoria" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Memoria</button>
-                    <button id="btnEmpatia" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Empatia</button>
-                    <button id="btnDualita" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Dualità</button>
-                    <button id="btnSperanza" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Speranza</button>
+                    <button id="btnMemoria" class="bg-[#1E88E5] hover:bg-[#42A5F5] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Memoria</button>
+                    <button id="btnEmpatia" class="bg-[#4CAF50] hover:bg-[#66BB6A] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Empatia</button>
+                    <button id="btnDualita" class="bg-[#FBC02D] hover:bg-[#FFD54F] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Dualità</button>
+                    <button id="btnSperanza" class="bg-[#FF9800] hover:bg-[#FFB74D] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Speranza</button>
                 </div>
-                <div id="geminiOutput" class="bg-slate-900/50 border border-gray-600 rounded-lg p-6 min-h-[100px] flex items-center justify-center text-center text-gray-400 italic">
+                <div id="geminiOutput" class="bg-[#E0E0E0] border border-[#4CAF50] rounded-lg p-6 min-h-[100px] flex items-center justify-center text-center text-[#1A237E] italic">
                     <p>Seleziona un tema per iniziare.</p>
                 </div>
             </section>
 
         </main>
 
-        <footer class="text-center mt-12 py-6 border-t border-white/20">
-            <p class="text-gray-400">"Non è il finale perfetto che aveva sognato. È qualcosa di molto più reale, più complicato e più bello."</p>
-            <p class="text-orange-400 mt-2 text-2xl font-black tracking-tighter">"È un inizio."</p>
+        <footer class="text-center mt-12 py-6 border-t border-[#4CAF50]">
+            <p class="text-[#1A237E]">"Non è il finale perfetto che aveva sognato. È qualcosa di molto più reale, più complicato e più bello."</p>
+            <p class="text-[#4CAF50] mt-2 text-2xl font-black tracking-tighter">"È un inizio."</p>
         </footer>
 
     </div>
@@ -204,20 +206,21 @@
         }
     };
     
-    const brilliantBluesPalette = {
-        blue: 'rgba(0, 63, 92, 0.8)',
-        purple: 'rgba(88, 80, 141, 0.8)',
-        magenta: 'rgba(188, 80, 144, 0.8)',
-        red: 'rgba(255, 99, 97, 0.8)',
-        orange: 'rgba(255, 166, 0, 0.8)',
+    // Nuova palette colori armoniosa basata su toni freddi
+    const harmoniousPalette = {
+        lightBlue: 'rgba(179, 229, 252, 0.8)', // B3E5FC
+        mediumBlue: 'rgba(66, 165, 245, 0.8)', // 42A5F5
+        darkBlue: 'rgba(2, 119, 189, 0.8)', // 0277BD
+        lightGreen: 'rgba(129, 199, 132, 0.8)', // 81C784
+        green: 'rgba(76, 175, 80, 0.8)', // 4CAF50
     };
 
-    const brilliantBluesBorders = {
-        blue: 'rgba(0, 63, 92, 1)',
-        purple: 'rgba(88, 80, 141, 1)',
-        magenta: 'rgba(188, 80, 144, 1)',
-        red: 'rgba(255, 99, 97, 1)',
-        orange: 'rgba(255, 166, 0, 1)',
+    const harmoniousBorders = {
+        lightBlue: 'rgba(179, 229, 252, 1)',
+        mediumBlue: 'rgba(66, 165, 245, 1)',
+        darkBlue: 'rgba(2, 119, 189, 1)',
+        lightGreen: 'rgba(129, 199, 132, 1)',
+        green: 'rgba(76, 175, 80, 1)',
     };
     
     const transparent = 'rgba(0, 0, 0, 0)';
@@ -230,40 +233,40 @@
                 datasets: [{
                     label: 'Skygrid',
                     data: [10, 9, 2, 1, 3, 10],
-                    backgroundColor: 'rgba(88, 80, 141, 0.4)',
-                    borderColor: brilliantBluesBorders.purple,
-                    pointBackgroundColor: brilliantBluesBorders.purple,
+                    backgroundColor: 'rgba(66, 165, 245, 0.4)', // Medium Blue
+                    borderColor: harmoniousBorders.mediumBlue,
+                    pointBackgroundColor: harmoniousBorders.mediumBlue,
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBluesBorders.purple
+                    pointHoverBorderColor: harmoniousBorders.mediumBlue
                 }, {
                     label: 'Midzone',
                     data: [3, 2, 9, 10, 9, 4],
-                    backgroundColor: 'rgba(255, 99, 97, 0.4)',
-                    borderColor: brilliantBluesBorders.red,
-                    pointBackgroundColor: brilliantBluesBorders.red,
+                    backgroundColor: 'rgba(129, 199, 132, 0.4)', // Light Green
+                    borderColor: harmoniousBorders.lightGreen,
+                    pointBackgroundColor: harmoniousBorders.lightGreen,
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBluesBorders.red
+                    pointHoverBorderColor: harmoniousBorders.lightGreen
                 }]
             },
             options: {
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' },
-                        grid: { color: 'rgba(255, 255, 255, 0.2)' },
-                        pointLabels: { color: '#fff', font: { size: 13 } },
+                        angleLines: { color: 'rgba(0, 0, 0, 0.2)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.2)' },
+                        pointLabels: { color: '#1A237E', font: { size: 13 } },
                         ticks: {
-                            color: '#fff',
-                            backdropColor: 'rgba(0,0,0,0.5)',
+                            color: '#1A237E',
+                            backdropColor: 'rgba(255,255,255,0.5)',
                             stepSize: 2
                         }
                     }
                 },
                 plugins: {
                     legend: {
-                        labels: { color: '#fff', font: { size: 14 } }
+                        labels: { color: '#1A237E', font: { size: 14 } }
                     },
                     tooltip: {
                         callbacks: {
@@ -283,7 +286,7 @@
                     labels: [label, ''],
                     datasets: [{
                         data: data,
-                        backgroundColor: [color, 'rgba(255, 255, 255, 0.1)'],
+                        backgroundColor: [color, 'rgba(0, 0, 0, 0.1)'],
                         borderColor: [borderColor, transparent],
                         borderWidth: 1,
                         cutout: '70%'
@@ -302,10 +305,10 @@
         }
     };
 
-    createDonutChart('memoryChart', 'Memoria', [85, 15], brilliantBluesPalette.purple, brilliantBluesBorders.purple);
-    createDonutChart('empathyChart', 'Empatia', [90, 10], brilliantBluesPalette.magenta, brilliantBluesBorders.magenta);
-    createDonutChart('dualityChart', 'Dualità', [100, 0], brilliantBluesPalette.red, brilliantBluesBorders.red);
-    createDonutChart('hopeChart', 'Speranza', [75, 25], brilliantBluesPalette.orange, brilliantBluesBorders.orange);
+    createDonutChart('memoryChart', 'Memoria', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Empatia', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Dualità', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Speranza', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
 
     document.querySelectorAll('#gemini-feature button').forEach(button => {
         button.addEventListener('click', () => {
@@ -351,3 +354,4 @@
 </script>
 </body>
 </html>
+
