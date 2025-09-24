@@ -1,0 +1,375 @@
+!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagalog Protocol: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E3F2FD; /* Un azzurro molto chiaro */
+            color: #1A237E; /* Blu scuro per il testo */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow::after {
+            content: '\2193';
+            font-size: 2.5rem;
+            color: #4CAF50; /* Un verde vibrante */
+            line-height: 1;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #4CAF50;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Selettore di Lingua -->
+        <div class="flex justify-end space-x-2 text-sm mb-4">
+            <a href="tagalog_protocol_infographic.html" class="font-bold text-[#1A237E] underline">Italiano</a>
+            <a href="tagalog_protocol_infographic_en.html" class="text-[#1A237E] hover:underline">English</a>
+            <a href="tagalog_protocol_infographic_tl.html" class="text-[#1A237E] hover:underline">Tagalog</a>
+        </div>
+
+        <header class="text-center mb-12">
+            <h1 class="text-5xl md:text-7xl font-black text-[#1A237E] tracking-tighter">TAGALOG PROTOCOL</h1>
+            <p class="text-xl md:text-2xl text-[#4CAF50] mt-2">Una Visione di Manila, 2195</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="mondo" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Un Organismo Stratificato</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">Nel 2195, Manila è divisa. Due mondi coesistono in un delicato e teso equilibrio: uno di logica impeccabile e l'altro di memorie imperfette, un'anima divisa tra il cielo e la terra.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-[#90CAF9] rounded-lg p-6 border border-[#42A5F5] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">SKYGRID</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#42A5F5] mb-4">I Livelli Superiori</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#42A5F5]">
+                            <li>Esistenza governata da logica e protocolli.</li>
+                            <li>Imponenti torri di sorveglianza semantica.</li>
+                            <li>Ogni pensiero e azione sono monitorati.</li>
+                            <li>Un mondo di ordine e controllo assoluto.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6 border border-[#80DEEA] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">MIDZONE</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#80DEEA] mb-4">I Livelli Inferiori</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#80DEEA]">
+                            <li>Archivio vivente di glitch e memorie.</li>
+                            <li>Un'anima caotica, poetica e umana.</li>
+                            <li>Il linguaggio dei gesti, del silenzio e dell'empatia.</li>
+                            <li>Un mondo di imperfezione e resilienza.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conflitto" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Il Conflitto Centrale: Logica vs. Poesia</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">La vera battaglia non si combatte con le armi, ma con le idee. Skygrid e Midzone rappresentano due filosofie opposte, qui visualizzate in base ai loro valori fondamentali.</p>
+                <div class="chart-container">
+                    <canvas id="conflictChart"></canvas>
+                </div>
+            </section>
+
+            <section id="personaggi" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Figure Chiave della Trasformazione</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">👩🏻</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">LIRA</h3>
+                        <p class="text-[#1A237E]">La protagonista, in bilico tra i due mondi, cerca di unire la realtà e la finzione attraverso il "Ponte della Voce".</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">🧑‍🏫</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">MARIAN</h3>
+                        <p class="text-[#1A237E]">Insegna ad ascoltare, non solo le parole, ma il linguaggio profondo dell'empatia, unendo studenti da entrambi i livelli.</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">🗂️</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">ISKO 9</h3>
+                        <p class="text-[#1A237E]">L'archivista di due culture. Preserva il passato e documenta il presente, assicurando che nessuna voce possa soffocare l'altra.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="risoluzione" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">La Sintesi: Un Nuovo Inizio</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">La soluzione non è la vittoria di una parte, ma l'integrazione. Dal conflitto emerge una nuova realtà, più complessa, imperfetta e bella, simboleggiata dalla "Membrana" armonica.</p>
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-center p-4 border-2 border-[#42A5F5] rounded-lg bg-[#90CAF9] w-32">
+                            <p class="font-bold text-[#1A237E]">LOGICA</p>
+                        </div>
+                        <p class="text-4xl text-[#4CAF50]">+</p>
+                        <div class="text-center p-4 border-2 border-[#80DEEA] rounded-lg bg-[#E0F7FA] w-32">
+                            <p class="font-bold text-[#1A237E]">POESIA</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow"></div>
+                     <div class="text-center p-6 border-2 border-[#4CAF50] rounded-lg bg-[#BBDEFB] w-64">
+                        <h3 class="text-xl font-bold text-[#4CAF50]">CULTURA SINTETIZZATA</h3>
+                        <p class="text-sm text-[#1A237E]">Un equilibrio tra controllo e creatività.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="temi" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Temi Chiave Esplorati</h2>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="memoryChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Memoria</h3>
+                        <p class="text-sm text-[#1A237E]">La lotta per preservare il passato e documentare il presente in un mondo digitale.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="empathyChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Empatia</h3>
+                        <p class="text-sm text-[#1A237E]">L'importanza di ascoltare e comprendere oltre le barriere dei protocolli.</p>
+                    </div>
+                     <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                             <canvas id="dualityChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Dualità</h3>
+                         <p class="text-sm text-[#1A237E]">Il dialogo costante tra scienza e arte, ordine e caos, artificiale e umano.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="hopeChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Speranza</h3>
+                        <p class="text-sm text-[#1A237E]">Il racconto non offre un finale perfetto, ma un nuovo, più complesso e bellissimo inizio.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="gemini-feature" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">✨ Esplora i Temi ✨</h2>
+                <p class="text-center mb-6 max-w-3xl mx-auto text-[#1A237E]">Seleziona un tema per generare un'analisi contestuale che approfondisce il suo significato all'interno del mondo di Tagalog Protocol.</p>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button id="btnMemoria" class="bg-[#1E88E5] hover:bg-[#42A5F5] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Memoria</button>
+                    <button id="btnEmpatia" class="bg-[#4CAF50] hover:bg-[#66BB6A] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Empatia</button>
+                    <button id="btnDualita" class="bg-[#FBC02D] hover:bg-[#FFD54F] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Dualità</button>
+                    <button id="btnSperanza" class="bg-[#FF9800] hover:bg-[#FFB74D] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Speranza</button>
+                </div>
+                <div id="geminiOutput" class="bg-[#E0E0E0] border border-[#4CAF50] rounded-lg p-6 min-h-[100px] flex items-center justify-center text-center text-[#1A237E] italic">
+                    <p>Seleziona un tema per iniziare.</p>
+                </div>
+            </section>
+        
+        </main>
+        
+        <footer class="text-center mt-12 py-6 border-t border-[#4CAF50]">
+            <p class="text-[#1A237E]">"Non è il finale perfetto che aveva sognato. È qualcosa di molto più reale, più complicato e più bello."</p>
+            <p class="text-[#4CAF50] mt-2 text-2xl font-black tracking-tighter">"È un inizio."</p>
+        </footer>
+
+        <!-- Inizio sezione per il gancio del libro -->
+        <section id="book-hook" class="text-center mt-12 py-6">
+            <h2 class="text-2xl font-bold text-[#1A237E] mb-4">Sei pronto a leggere l'inizio?</h2>
+            <a href="#" class="bg-[#4CAF50] hover:bg-[#66BB6A] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                Continua a leggere il racconto
+            </a>
+            <p class="text-sm text-[#1A237E] mt-4 opacity-75">
+                <!-- Modifica l'attributo href="#" qui sopra per inserire il link al tuo libro -->
+                (Puoi modificare questo link per puntare al tuo libro.)
+            </p>
+        </section>
+        <!-- Fine sezione per il gancio del libro -->
+
+    </div>
+
+<script>
+    const chartTooltipTitleCallback = function(tooltipItems) {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+          return label.join(' ');
+        } else {
+          return label;
+        }
+    };
+    
+    // Nuova palette colori armoniosa basata su toni freddi
+    const harmoniousPalette = {
+        lightBlue: 'rgba(179, 229, 252, 0.8)', // B3E5FC
+        mediumBlue: 'rgba(66, 165, 245, 0.8)', // 42A5F5
+        darkBlue: 'rgba(2, 119, 189, 0.8)', // 0277BD
+        lightGreen: 'rgba(129, 199, 132, 0.8)', // 81C784
+        green: 'rgba(76, 175, 80, 0.8)', // 4CAF50
+    };
+
+    const harmoniousBorders = {
+        lightBlue: 'rgba(179, 229, 252, 1)',
+        mediumBlue: 'rgba(66, 165, 245, 1)',
+        darkBlue: 'rgba(2, 119, 189, 1)',
+        lightGreen: 'rgba(129, 199, 132, 1)',
+        green: 'rgba(76, 175, 80, 1)',
+    };
+    
+    const transparent = 'rgba(0, 0, 0, 0)';
+
+    if (document.getElementById('conflictChart')) {
+        new Chart(document.getElementById('conflictChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Logica', 'Controllo', 'Creatività', 'Empatia', ['Memoria', 'Umana'], 'Ordine'],
+                datasets: [{
+                    label: 'Skygrid',
+                    data: [10, 9, 2, 1, 3, 10],
+                    backgroundColor: 'rgba(66, 165, 245, 0.4)', // Medium Blue
+                    borderColor: harmoniousBorders.mediumBlue,
+                    pointBackgroundColor: harmoniousBorders.mediumBlue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: harmoniousBorders.mediumBlue
+                }, {
+                    label: 'Midzone',
+                    data: [3, 2, 9, 10, 9, 4],
+                    backgroundColor: 'rgba(129, 199, 132, 0.4)', // Light Green
+                    borderColor: harmoniousBorders.lightGreen,
+                    pointBackgroundColor: harmoniousBorders.lightGreen,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: harmoniousBorders.lightGreen
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.2)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.2)' },
+                        pointLabels: { color: '#1A237E', font: { size: 13 } },
+                        ticks: {
+                            color: '#1A237E',
+                            backdropColor: 'rgba(255,255,255,0.5)',
+                            stepSize: 2
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#1A237E', font: { size: 14 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    const createDonutChart = (elementId, label, data, color, borderColor) => {
+        if (document.getElementById(elementId)) {
+            new Chart(document.getElementById(elementId), {
+                type: 'doughnut',
+                data: {
+                    labels: [label, ''],
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [color, 'rgba(0, 0, 0, 0.1)'],
+                        borderColor: [borderColor, transparent],
+                        borderWidth: 1,
+                        cutout: '70%'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: false
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    createDonutChart('memoryChart', 'Memoria', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Empatia', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Dualità', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Speranza', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
+
+    document.querySelectorAll('#gemini-feature button').forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.textContent;
+            generateThemeAnalysis(theme);
+        });
+    });
+
+    async function generateThemeAnalysis(theme) {
+        const outputDiv = document.getElementById('geminiOutput');
+        outputDiv.innerHTML = '<div class="loading-spinner"></div><p class="ml-4">Generazione in corso...</p>';
+        outputDiv.classList.add('flex', 'items-center', 'justify-center');
+
+        const prompt = `Espandi il tema della "${theme}" nel contesto del racconto "Tagalog Protocol", dove la logica dello Skygrid e la poesia della Midzone si scontrano. Fornisci una breve analisi di circa 50-70 parole, concentrandoti sulla sua importanza nella narrativa.`;
+        const systemPrompt = "Sei un analista letterario specializzato in fantascienza distopica. Il tuo compito è fornire una breve e concisa analisi tematica.";
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        const payload = {
+            contents: [{ parts: [{ text: prompt }] }],
+            systemInstruction: {
+                parts: [{ text: systemPrompt }]
+            },
+        };
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (text) {
+            outputDiv.innerHTML = `<p>${text}</p>`;
+        } else {
+            outputDiv.innerHTML = `<p class="text-red-400">Si è verificato un errore durante la generazione. Per favore, riprova.</p>`;
+        }
+        outputDiv.classList.remove('flex', 'items-center', 'justify-center');
+    }
+
+</script>
+</body>
+</html>
