@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagalog Protocol: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E3F2FD; /* A very light blue */
+            color: #1A237E; /* Dark blue for text */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow::after {
+            content: '\2193';
+            font-size: 2.5rem;
+            color: #4CAF50; /* A vibrant green */
+            line-height: 1;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #4CAF50;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!-- Language Selector -->
+        <div class="flex justify-end space-x-2 text-sm mb-4">
+            <a href="tagalog_protocol_infographic.html" class="text-[#1A237E] hover:underline">Italiano</a>
+            <a href="tagalog_protocol_infographic_en.html" class="text-[#1A237E] hover:underline">English</a>
+            <a href="tagalog_protocol_infographic_tl.html" class="font-bold text-[#1A237E] underline">Tagalog</a>
+        </div>
+
+        <header class="text-center mb-12">
+            <h1 class="text-5xl md:text-7xl font-black text-[#1A237E] tracking-tighter">TAGALOG PROTOCOL</h1>
+            <p class="text-xl md:text-2xl text-[#4CAF50] mt-2">Isang Pananaw ng Maynila, 2195</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="world" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Isang Nakasalansan na Organismo</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">Noong 2195, ang Maynila ay hati. Magkasamang umiiral ang dalawang mundo sa isang maselan at maigting na balanse: ang isa ay may di-matukoy na lohika at ang isa naman ay may di-perpektong alaala, isang kaluluwa na nahahati sa pagitan ng langit at lupa.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="bg-[#90CAF9] rounded-lg p-6 border border-[#42A5F5] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">SKYGRID</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#42A5F5] mb-4">Ang mga Mataas na Antas</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#42A5F5]">
+                            <li>Pag-iral na pinamamahalaan ng lohika at mga protokolo.</li>
+                            <li>Naka-atas na mga tore ng semanticong pagsubaybay.</li>
+                            <li>Ang bawat pag-iisip at kilos ay sinusubaybayan.</li>
+                            <li>Isang mundo ng lubos na kaayusan at kontrol.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6 border border-[#80DEEA] shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#1A237E]">MIDZONE</h3>
+                        <p class="text-sm uppercase tracking-widest text-[#80DEEA] mb-4">Ang mga Mababang Antas</p>
+                        <ul class="space-y-2 text-left list-inside list-disc marker:text-[#80DEEA]">
+                            <li>Isang buhay na archive ng mga glitch at alaala.</li>
+                            <li>Isang magulo, tula, at taong kaluluwa.</li>
+                            <li>Ang wika ng mga galaw, katahimikan, at pagdamay.</li>
+                            <li>Isang mundo ng imperpeksyon at pagtitiyaga.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conflict" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Ang Pangunahing Tunggalian: Lohika vs. Tula</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">Ang tunay na labanan ay hindi nilalabanan gamit ang mga sandata, kundi sa mga ideya. Ang Skygrid at Midzone ay kumakatawan sa dalawang magkasalungat na pilosopiya, na nakikita rito batay sa kanilang mga pangunahing halaga.</p>
+                <div class="chart-container">
+                    <canvas id="conflictChart"></canvas>
+                </div>
+            </section>
+
+            <section id="characters" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Mga Susing Tauhan ng Pagbabago</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">👩🏻</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">LIRA</h3>
+                        <p class="text-[#1A237E]">Ang protagonista, na nakapagitna sa dalawang mundo, naghahangad na pag-isahin ang katotohanan at kathang-isip sa pamamagitan ng "Voice Bridge".</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">🧑‍🏫</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">MARIAN</h3>
+                        <p class="text-[#1A237E]">Nagtuturo na makinig, hindi lang sa mga salita, kundi sa malalim na wika ng pagdamay, pinag-iisa ang mga mag-aaral mula sa parehong antas.</p>
+                    </div>
+                    <div class="bg-[#E0F7FA] rounded-lg p-6">
+                        <p class="text-5xl mb-2">🗂️</p>
+                        <h3 class="text-xl font-bold text-[#1A237E]">ISKO 9</h3>
+                        <p class="text-[#1A237E]">Ang tagapag-ingat ng dalawang kultura. Pinapanatili niya ang nakaraan at dinodokumento ang kasalukuyan, sinisigurado na hindi muli matatabunan ang isang boses ng isa pa.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resolution" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#1A237E]">Ang Sintesis: Isang Bagong Simula</h2>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-[#1A237E]">Ang solusyon ay hindi ang tagumpay ng isang panig, kundi ang integrasyon. Mula sa tunggalian ay lumalabas ang isang bagong katotohanan, mas kumplikado, di-perpekto, at maganda, na sumisimbolo sa harmonikong "Membrane".</p>
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-center p-4 border-2 border-[#42A5F5] rounded-lg bg-[#90CAF9] w-32">
+                            <p class="font-bold text-[#1A237E]">LOHIKA</p>
+                        </div>
+                        <p class="text-4xl text-[#4CAF50]">+</p>
+                        <div class="text-center p-4 border-2 border-[#80DEEA] rounded-lg bg-[#E0F7FA] w-32">
+                            <p class="font-bold text-[#1A237E]">TULA</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow"></div>
+                     <div class="text-center p-6 border-2 border-[#4CAF50] rounded-lg bg-[#BBDEFB] w-64">
+                        <h3 class="text-xl font-bold text-[#4CAF50]">SINTETISADONG KULTURA</h3>
+                        <p class="text-sm text-[#1A237E]">Isang balanse sa pagitan ng kontrol at pagkamalikhain.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="themes" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">Mga Susing Tema na Ginalugad</h2>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="memoryChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Alaala</h3>
+                        <p class="text-sm text-[#1A237E]">Ang pakikibaka upang mapanatili ang nakaraan at idokumento ang kasalukuyan sa isang digital na mundo.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="empathyChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Pagdamay</h3>
+                        <p class="text-sm text-[#1A237E]">Ang kahalagahan ng pakikinig at pag-unawa sa labas ng mga hadlang ng mga protokolo.</p>
+                    </div>
+                     <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                             <canvas id="dualityChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Pagkadalawahan</h3>
+                         <p class="text-sm text-[#1A237E]">Ang patuloy na diyalogo sa pagitan ng agham at sining, kaayusan at kaguluhan, artipisyal at tao.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-40 h-40 relative">
+                            <canvas id="hopeChart"></canvas>
+                        </div>
+                        <h3 class="text-lg font-bold mt-4 text-[#1A237E]">Pag-asa</h3>
+                        <p class="text-sm text-[#1A237E]">Ang kuwento ay hindi nag-aalok ng perpektong wakas, ngunit isang bago, mas kumplikado at magandang simula.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="gemini-feature" class="bg-[#BBDEFB] rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#1A237E]">✨ Galugarin ang mga Tema ✨</h2>
+                <p class="text-center mb-6 max-w-3xl mx-auto text-[#1A237E]">Pumili ng isang tema upang bumuo ng isang kontekstuwal na pagsusuri na tumatalakay sa kahalagahan nito sa loob ng mundo ng Tagalog Protocol.</p>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button id="btnMemoria" class="bg-[#1E88E5] hover:bg-[#42A5F5] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Alaala</button>
+                    <button id="btnEmpatia" class="bg-[#4CAF50] hover:bg-[#66BB6A] text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Pagdamay</button>
+                    <button id="btnDualita" class="bg-[#FBC02D] hover:bg-[#FFD54F] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Pagkadalawahan</button>
+                    <button id="btnSperanza" class="bg-[#FF9800] hover:bg-[#FFB74D] text-[#1A237E] font-bold py-2 px-4 rounded-full transition-colors duration-300">Pag-asa</button>
+                </div>
+                <div id="geminiOutput" class="bg-[#E0E0E0] border border-[#4CAF50] rounded-lg p-6 min-h-[100px] flex items-center justify-center text-center text-[#1A237E] italic">
+                    <p>Pumili ng isang tema upang magsimula.</p>
+                </div>
+            </section>
+        
+        </main>
+        
+        <footer class="text-center mt-12 py-6 border-t border-[#4CAF50]">
+            <p class="text-[#1A237E]">"Ito ay hindi ang perpektong wakas na pinangarap niya. Ito ay isang bagay na mas totoo, mas kumplikado, at mas maganda."</p>
+            <p class="text-[#4CAF50] mt-2 text-2xl font-black tracking-tighter">"Ito ay isang simula."</p>
+        </footer>
+
+        <!-- Section for the book hook -->
+        <section id="book-hook" class="text-center mt-12 py-6">
+            <h2 class="text-2xl font-bold text-[#1A237E] mb-4">Handa ka na bang basahin ang simula?</h2>
+            <a href="#" class="bg-[#4CAF50] hover:bg-[#66BB6A] text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                Magpatuloy sa pagbabasa ng kuwento
+            </a>
+            <p class="text-sm text-[#1A237E] mt-4 opacity-75">
+                <!-- Change the href="#" attribute above to link to your book -->
+                (Maaari mong baguhin ang link na ito upang ituro sa iyong libro.)
+            </p>
+        </section>
+        <!-- End section for the book hook -->
+
+    </div>
+
+<script>
+    const chartTooltipTitleCallback = function(tooltipItems) {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+          return label.join(' ');
+        } else {
+          return label;
+        }
+    };
+    
+    // Harmonious color palette based on cool tones
+    const harmoniousPalette = {
+        lightBlue: 'rgba(179, 229, 252, 0.8)', // B3E5FC
+        mediumBlue: 'rgba(66, 165, 245, 0.8)', // 42A5F5
+        darkBlue: 'rgba(2, 119, 189, 0.8)', // 0277BD
+        lightGreen: 'rgba(129, 199, 132, 0.8)', // 81C784
+        green: 'rgba(76, 175, 80, 0.8)', // 4CAF50
+    };
+
+    const harmoniousBorders = {
+        lightBlue: 'rgba(179, 229, 252, 1)',
+        mediumBlue: 'rgba(66, 165, 245, 1)',
+        darkBlue: 'rgba(2, 119, 189, 1)',
+        lightGreen: 'rgba(129, 199, 132, 1)',
+        green: 'rgba(76, 175, 80, 1)',
+    };
+    
+    const transparent = 'rgba(0, 0, 0, 0)';
+
+    if (document.getElementById('conflictChart')) {
+        new Chart(document.getElementById('conflictChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Lohika', 'Kontrol', 'Pagkamalikhain', 'Pagdamay', ['Alaala', 'Tao'], 'Kaayusan'],
+                datasets: [{
+                    label: 'Skygrid',
+                    data: [10, 9, 2, 1, 3, 10],
+                    backgroundColor: 'rgba(66, 165, 245, 0.4)', // Medium Blue
+                    borderColor: harmoniousBorders.mediumBlue,
+                    pointBackgroundColor: harmoniousBorders.mediumBlue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: harmoniousBorders.mediumBlue
+                }, {
+                    label: 'Midzone',
+                    data: [3, 2, 9, 10, 9, 4],
+                    backgroundColor: 'rgba(129, 199, 132, 0.4)', // Light Green
+                    borderColor: harmoniousBorders.lightGreen,
+                    pointBackgroundColor: harmoniousBorders.lightGreen,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: harmoniousBorders.lightGreen
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.2)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.2)' },
+                        pointLabels: { color: '#1A237E', font: { size: 13 } },
+                        ticks: {
+                            color: '#1A237E',
+                            backdropColor: 'rgba(255,255,255,0.5)',
+                            stepSize: 2
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#1A237E', font: { size: 14 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    const createDonutChart = (elementId, label, data, color, borderColor) => {
+        if (document.getElementById(elementId)) {
+            new Chart(document.getElementById(elementId), {
+                type: 'doughnut',
+                data: {
+                    labels: [label, ''],
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [color, 'rgba(0, 0, 0, 0.1)'],
+                        borderColor: [borderColor, transparent],
+                        borderWidth: 1,
+                        cutout: '70%'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: false
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    createDonutChart('memoryChart', 'Alaala', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Pagdamay', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Pagkadalawahan', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Pag-asa', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
+
+    document.querySelectorAll('#gemini-feature button').forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.textContent;
+            generateThemeAnalysis(theme);
+        });
+    });
+
+    async function generateThemeAnalysis(theme) {
+        const outputDiv = document.getElementById('geminiOutput');
+        outputDiv.innerHTML = '<div class="loading-spinner"></div><p class="ml-4">Nagbubuo...</p>';
+        outputDiv.classList.add('flex', 'items-center', 'justify-center');
+
+        const prompt = `Palawakin ang tema ng "${theme}" sa konteksto ng kuwentong "Tagalog Protocol", kung saan nagbabanggaan ang lohika ng Skygrid at ang tula ng Midzone. Magbigay ng maikling pagsusuri na may 50-70 salita, na tumututok sa kahalagahan nito sa salaysay.`;
+        const systemPrompt = "Ikaw ay isang literary analyst na dalubhasa sa dystopian science fiction. Ang iyong gawain ay magbigay ng maikli at tiyak na thematic analysis.";
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        const payload = {
+            contents: [{ parts: [{ text: prompt }] }],
+            systemInstruction: {
+                parts: [{ text: systemPrompt }]
+            },
+        };
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (text) {
+            outputDiv.innerHTML = `<p>${text}</p>`;
+        } else {
+            outputDiv.innerHTML = `<p class="text-red-400">Nagkaroon ng error sa pagbuo. Pakisubukan muli.</p>`;
+        }
+        outputDiv.classList.remove('flex', 'items-center', 'justify-center');
+    }
+
+</script>
+</body>
+</html>
