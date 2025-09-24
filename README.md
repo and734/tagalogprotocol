@@ -1,10 +1,10 @@
 # tagalogprotocol
 
-This repository currently contains an HTML file. More information about the project will be added soon.
+This repository currently contains the webpage of Tagalog Protocol book
 
 ## Contents
 
-- [nuovo 1.html](#nuovo-1html)
+-webpage
 
 ## nuovo 1.html
 
