@@ -324,55 +324,46 @@
         }
     };
 
-    createDonutChart('memoryChart', 'Memoria', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
-    createDonutChart('empathyChart', 'Empatia', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
-    createDonutChart('dualityChart', 'Dualità', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
-    createDonutChart('hopeChart', 'Speranza', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
+    createDonutChart('memoryChart', 'Memory', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Empathy', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Duality', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Hope', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
 
     document.querySelectorAll('#gemini-feature button').forEach(button => {
         button.addEventListener('click', () => {
             const theme = button.textContent;
-            generateThemeAnalysis(theme);
+            displayThemeAnalysis(theme);
         });
     });
 
-    async function generateThemeAnalysis(theme) {
+    function displayThemeAnalysis(theme) {
         const outputDiv = document.getElementById('geminiOutput');
-        outputDiv.innerHTML = '<div class="loading-spinner"></div><p class="ml-4">Generazione in corso...</p>';
-        outputDiv.classList.add('flex', 'items-center', 'justify-center');
+        let analysisText = "";
 
-        const prompt = `Espandi il tema della "${theme}" nel contesto del racconto "Tagalog Protocol", dove la logica dello Skygrid e la poesia della Midzone si scontrano. Fornisci una breve analisi di circa 50-70 parole, concentrandoti sulla sua importanza nella narrativa.`;
-        const systemPrompt = "Sei un analista letterario specializzato in fantascienza distopica. Il tuo compito è fornire una breve e concisa analisi tematica.";
-        const apiKey = "";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-        const payload = {
-            contents: [{ parts: [{ text: prompt }] }],
-            systemInstruction: {
-                parts: [{ text: systemPrompt }]
-            },
-        };
-
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-        const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-        if (text) {
-            outputDiv.innerHTML = `<p>${text}</p>`;
-        } else {
-            outputDiv.innerHTML = `<p class="text-red-400">Si è verificato un errore durante la generazione. Per favore, riprova.</p>`;
+        switch (theme) {
+            case 'Memory':
+                analysisText = "La conclusione non è una vittoria utopica, ma un inizio. Offre speranza sotto forma di una nuova cultura sintetizzata in cui l'imperfezione e la resilienza sono apprezzate tanto quanto la logica e l'ordine.";
+                break;
+            case 'Empathy':
+                analysisText = "Il ruolo di Marian evidenzia l'empatia come ponte tra i due mondi. Insegna agli studenti di Skygrid e Midzone a comprendere il linguaggio silenzioso delle emozioni, un'abilità che i protocolli non possono contenere.";
+                break;
+            case 'Duality':
+                analysisText = "La narrazione è un dialogo costante tra due forze opposte: la logica contro la poesia, l'ordine contro il caos, l'artificiale contro l'umano. Il viaggio di Lira è la ricerca di una sintesi di queste dualità.";
+                break;
+            case 'Hope':
+                analysisText = "La conclusione non è una vittoria utopica, ma un inizio. Offre speranza sotto forma di una nuova cultura sintetizzata in cui l'imperfezione e la resilienza sono apprezzate tanto quanto la logica e l'ordine.";
+                break;
+            default:
+                analysisText = "Select a theme to begin.";
         }
-        outputDiv.classList.remove('flex', 'items-center', 'justify-center');
+
+        outputDiv.innerHTML = `<p>${analysisText}</p>`;
     }
 
 </script>
 </body>
 </html>
+
 
 
 
