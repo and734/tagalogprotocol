@@ -324,55 +324,45 @@
         }
     };
 
-    createDonutChart('memoryChart', 'Alaala', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
-    createDonutChart('empathyChart', 'Pagdamay', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
-    createDonutChart('dualityChart', 'Pagkadalawahan', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
-    createDonutChart('hopeChart', 'Pag-asa', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
+    createDonutChart('memoryChart', 'Memory', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Empathy', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Duality', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Hope', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
 
     document.querySelectorAll('#gemini-feature button').forEach(button => {
         button.addEventListener('click', () => {
             const theme = button.textContent;
-            generateThemeAnalysis(theme);
+            displayThemeAnalysis(theme);
         });
     });
 
-    async function generateThemeAnalysis(theme) {
+    function displayThemeAnalysis(theme) {
         const outputDiv = document.getElementById('geminiOutput');
-        outputDiv.innerHTML = '<div class="loading-spinner"></div><p class="ml-4">Nagbubuo...</p>';
-        outputDiv.classList.add('flex', 'items-center', 'justify-center');
+        let analysisText = "";
 
-        const prompt = `Palawakin ang tema ng "${theme}" sa konteksto ng kuwentong "Tagalog Protocol", kung saan nagbabanggaan ang lohika ng Skygrid at ang tula ng Midzone. Magbigay ng maikling pagsusuri na may 50-70 salita, na tumututok sa kahalagahan nito sa salaysay.`;
-        const systemPrompt = "Ikaw ay isang literary analyst na dalubhasa sa dystopian science fiction. Ang iyong gawain ay magbigay ng maikli at tiyak na thematic analysis.";
-        const apiKey = "";
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-        const payload = {
-            contents: [{ parts: [{ text: prompt }] }],
-            systemInstruction: {
-                parts: [{ text: systemPrompt }]
-            },
-        };
-
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-        const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-        if (text) {
-            outputDiv.innerHTML = `<p>${text}</p>`;
-        } else {
-            outputDiv.innerHTML = `<p class="text-red-400">Nagkaroon ng error sa pagbuo. Pakisubukan muli.</p>`;
+        switch (theme) {
+            case 'Memory':
+                analysisText = "The core conflict revolves around the preservation of human memories and glitches against the sterile logic of Skygrid. The Midzone, a living archive of imperfection, fights to prevent the erasure of its past.";
+                break;
+            case 'Empathy':
+                analysisText = "Marian's role highlights empathy as the bridge between the two worlds. She teaches students from both Skygrid and Midzone to understand the silent language of emotions, a skill that protocols cannot contain.";
+                break;
+            case 'Duality':
+                analysisText = "The narrative is a constant dialogue between two opposing forces: logic versus poetry, order versus chaos, the artificial versus the human. Lira's journey is the search for a synthesis of these dualities.";
+                break;
+            case 'Hope':
+                analysisText = "The conclusion is not a utopian victory, but a beginning. It offers hope in the form of a new, synthesized culture where imperfection and resilience are valued as much as logic and order.";
+                break;
+            default:
+                analysisText = "Select a theme to begin.";
         }
-        outputDiv.classList.remove('flex', 'items-center', 'justify-center');
+
+        outputDiv.innerHTML = `<p>${analysisText}</p>`;
     }
 
 </script>
 </body>
-
 </html>
+
 
 
