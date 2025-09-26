@@ -324,10 +324,10 @@
         }
     };
 
-    createDonutChart('memoryChart', 'Memory', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
-    createDonutChart('empathyChart', 'Empathy', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
-    createDonutChart('dualityChart', 'Duality', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
-    createDonutChart('hopeChart', 'Hope', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
+    createDonutChart('memoryChart', 'Alaala', [85, 15], harmoniousPalette.mediumBlue, harmoniousBorders.mediumBlue);
+    createDonutChart('empathyChart', 'Pagdamay', [90, 10], harmoniousPalette.lightGreen, harmoniousBorders.lightGreen);
+    createDonutChart('dualityChart', 'Pagkadalawahan', [100, 0], harmoniousPalette.darkBlue, harmoniousBorders.darkBlue);
+    createDonutChart('hopeChart', 'Pag-asa', [75, 25], harmoniousPalette.green, harmoniousBorders.green);
 
     document.querySelectorAll('#gemini-feature button').forEach(button => {
         button.addEventListener('click', () => {
@@ -341,16 +341,16 @@
         let analysisText = "";
 
         switch (theme) {
-            case 'Memory':
+            case 'Alaala':
                 analysisText = "The core conflict revolves around the preservation of human memories and glitches against the sterile logic of Skygrid. The Midzone, a living archive of imperfection, fights to prevent the erasure of its past.";
                 break;
-            case 'Empathy':
+            case 'Pagdamay':
                 analysisText = "Marian's role highlights empathy as the bridge between the two worlds. She teaches students from both Skygrid and Midzone to understand the silent language of emotions, a skill that protocols cannot contain.";
                 break;
-            case 'Duality':
+            case 'Pagkadalawahan':
                 analysisText = "The narrative is a constant dialogue between two opposing forces: logic versus poetry, order versus chaos, the artificial versus the human. Lira's journey is the search for a synthesis of these dualities.";
                 break;
-            case 'Hope':
+            case 'Pag-asa':
                 analysisText = "The conclusion is not a utopian victory, but a beginning. It offers hope in the form of a new, synthesized culture where imperfection and resilience are valued as much as logic and order.";
                 break;
             default:
@@ -363,6 +363,7 @@
 </script>
 </body>
 </html>
+
 
 
 
